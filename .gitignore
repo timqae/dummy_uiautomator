@@ -129,3 +129,5 @@ dmypy.json
 .pyre/
 venv/
 .idea/
+/device_info.png
+/device_info.txt
