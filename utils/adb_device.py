@@ -20,5 +20,5 @@ def take_screenshot():
     adb_device.pull("/sdcard/device_info.png", "device_info.png")
 
 
-def get_device_bluetooth_name():
+def get_device_build():
     return adb_device.shell('getprop | grep "ro.build.fingerprint"')
