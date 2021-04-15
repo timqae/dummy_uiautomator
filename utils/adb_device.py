@@ -2,17 +2,9 @@ from ppadb.client import Client as AdbClient
 
 
 client = AdbClient(host='127.0.0.1', port=5037)
-
-
-def get_serial() -> str:
-    device = client.devices()[0]
-    return device.get_serial_no()
-
-
-# first device serial connected via USB
-DEVICE_SERIAL = get_serial()
-
-adb_device = client.device(DEVICE_SERIAL)
+# get the first connected device serial
+device_serial = client.devices()[0].get_serial_no()
+adb_device = client.device(device_serial)
 
 
 def take_screenshot():
